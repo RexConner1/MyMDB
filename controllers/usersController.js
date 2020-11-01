@@ -3,7 +3,15 @@ const router = express.Router();
 
 const User = require("../models").User;
 
-// GET USERS PROFILE
+router.get("/:id", (req, res) => {
+  console.log(req.user);
+  User.findByPk(req.params.id).then((user) => {
+    res.render("movies/index.ejs", {
+      user: user,
+    });
+  });
+});
+
 router.get("/profile/:id", (req, res) => {
   console.log(req.user);
   User.findByPk(req.params.id).then((userProfile) => {
