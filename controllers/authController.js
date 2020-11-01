@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-const UserModel = require("../models").User;
+const User = require("../models").User;
 
 // SIGN OUT ROUTE
 router.get("/logout", (req, res) => {
@@ -26,7 +26,7 @@ router.post("/signup", (req, res) => {
       if (err) return res.status(500).json(err);
       req.body.password = hashedPwd;
 
-      UserModel.create(req.body)
+      User.create(req.body)
         .then((newUser) => {
           const token = jwt.sign(
             {
@@ -57,7 +57,7 @@ router.get("/login", (req, res) => {
 
 // POST LOGIN
 router.post("/login", (req, res) => {
-  UserModel.findOne({
+  User.findOne({
     where: {
       username: req.body.username,
     },
