@@ -3,14 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 2 Homepage</title>
+    <title>Main Menu</title>
   </head>
   <body>
-    <h1>Welcome to Project 2</h1>
+    <h1>Main Menu</h1>
     <nav>
-      <a href="/auth/signup">Sign Up</a>
-      <a href="/auth/login">Log In</a>
-      <a href="/auth/logout">Log Out</a>
+      <form action="/movies">
+        <input type="submit" value="Movies">
+      </form>
+
+      <form action="/tv">
+        <input type="submit" value="TV Shows">
+      </form>
+
+      <form action="/games">
+        <input type="submit" value="Video Games">
+      </form>
     </nav>
   </body>
 </html>
