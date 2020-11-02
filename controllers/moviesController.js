@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Media = require("../models").Media;
+const Movie = require("../models").Movie;
 
 router.get("/", (req, res) => {
     res.render("movies/index.ejs");
@@ -12,7 +12,7 @@ router.get("/add", (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    Media.create(req.body).then((newMovie) => {
+    Movie.create(req.body).then((newMovie) => {
         res.redirect(`/movies/${newMovie.id}`);
     });
 });
