@@ -4,7 +4,11 @@ const router = express.Router();
 const Movie = require("../models").Movie;
 
 router.get("/", (req, res) => {
-    res.render("movies/index.ejs");
+    Movie.findAll().then((movies) => {
+        res.render("movies/index.ejs", {
+            movies: movies,
+        });
+    });
 });
 
 router.get("/add", (req, res) => {
