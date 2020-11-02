@@ -6,7 +6,7 @@ const User = require("../models").User;
 router.get("/:id", (req, res) => {
   console.log(req.user);
   User.findByPk(req.params.id).then((user) => {
-    res.render("movies/index.ejs", {
+    res.render("users/index.ejs", {
       user: user,
     });
   });

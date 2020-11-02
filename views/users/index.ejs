@@ -7,9 +7,11 @@
   </head>
   <body>
     <h1>Main Menu</h1>
-    <nav>
+    
+    <div>
       <form action="/movies">
         <input type="submit" value="Movies">
+        <input type="hidden" name="user" value="<%= user.id %>">
       </form>
 
       <form action="/tv">
@@ -19,6 +21,6 @@
       <form action="/games">
         <input type="submit" value="Video Games">
       </form>
-    </nav>
+    </div>
   </body>
 </html>
