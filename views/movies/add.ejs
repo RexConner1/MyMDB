@@ -6,32 +6,40 @@
     <title>Add Movie</title>
 </head>
 <body>
-    <div class="input">
-        <label for="name">Name:</label>
-        <input type="text" name="title" required>
-    </div>
+    <form action="/movies/add" method="POST">
+        <div class="input">
+            <label for="name">Name:</label>
+            <input type="text" name="title" required>
+        </div>
 
-    <div class="input">
-        <label for="year">Year:</label>
-        <input type="number" name="year">
-    </div>
+        <div class="input">
+            <input type="hidden" name="type" value="movie">
+        </div>
 
-    <div class="input">
-        <label for="runTime">Run Time:</label>
-        <input type="number" name="runTime">
-    </div>
+        <div class="input">
+            <label for="year">Year:</label>
+            <input type="number" name="year">
+        </div>
 
-    <div class="input">
-        <label for="description">Description:</label>
-        <textarea type="text" name="description"></textarea>
-    </div>
+        <div class="input">
+            <label for="runTime">Run Time:</label>
+            <input type="number" name="runTime">
+        </div>
 
-    <div class="input">
-        <label for="wantOrHave">Name:</label>
-        <select name="wantOrHave">
-            <option value=0>Want</option>
-            <option value=1>Have</option>
-        </select>
-    </div>
+        <div class="input">
+            <label for="description">Description:</label>
+            <textarea type="text" name="description"></textarea>
+        </div>
+
+        <div class="input">
+            <label for="wantOrHave">Name:</label>
+            <select name="wantOrHave">
+                <option value=0>Want</option>
+                <option value=1>Have</option>
+            </select>
+        </div>
+
+        <input type="submit" name="" value="Submit"/>
+    </form>
 </body>
 </html>
