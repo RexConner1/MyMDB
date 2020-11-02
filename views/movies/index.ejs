@@ -4,31 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of Movies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <div>
-      <ul>
-      <% movies.forEach(movie => {%>
-        <li><a href="/movies/<%= movie.id %>"><%= movie.name %></a></li>
-      <% });%>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">myMDB</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/movies">Movies</a></li>
+        <li><a href="#">TV Shows</a></li>
+        <li><a href="#">Video Games</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if (user) { %>
+        <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        <% } else { %>
+        <li><a href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <% } %>
       </ul>
     </div>
-    <div>
-        <form action="">
-          <input type="submit" value="Switch to Have">
-        </form>
-  
-        <form action="/movies/add">
-          <input type="submit" value="Add to Movies">
-        </form>
-  
-        <form action="">
-          <input type="submit" value="Sort">
-        </form>
+  </nav>
 
-        <form action="">
-            <input type="submit" value="Search">
-        </form>
-    </div>
+  <div>
+    <ul>
+    <% movies.forEach(movie => {%>
+      <li><a href="/movies/<%= movie.id %>"><%= movie.name %></a></li>
+    <% });%>
+    </ul>
+  </div>
+
+  <div>
+      <form action="">
+        <input type="submit" value="Switch to Have">
+      </form>
+
+      <form action="/movies/add">
+        <input type="submit" value="Add to Movies">
+      </form>
+
+      <form action="">
+        <input type="submit" value="Sort">
+      </form>
+
+      <form action="">
+          <input type="submit" value="Search">
+      </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
