@@ -31,7 +31,9 @@ app.use(express.static("public"));
 
 // HOMEPAGE
 app.get("/", (req, res) => {
-  res.render("users/index.ejs");
+  verifyToken(req, res, () =>
+    req.user ? res.render("users/index.ejs") : res.render('users/login.ejs')
+  );
 });
 
 app.use("/auth", require("./controllers/authController.js"));
