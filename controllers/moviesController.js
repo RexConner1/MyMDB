@@ -18,7 +18,11 @@ router.post('/add', (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-    res.render("movies/show.ejs");
-});
+    Movie.findByPk(req.params.id).then((foundMovie) => {
+      res.render("movies/show.ejs", {
+        movie: foundMovie,
+      });
+    });
+});  
 
 module.exports = router;

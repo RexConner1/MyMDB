@@ -23,6 +23,7 @@ router.get("/profile/:id", (req, res) => {
 
 router.delete('/profile/:id', (req, res) => {
   User.destroy({ where: { id: req.params.id } }).then(() => {
+      res.clearCookie("jwt");
       res.redirect("/auth/login");
   });
 });

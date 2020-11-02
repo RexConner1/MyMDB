@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Title</title>
+    <title><%= movie.name %></title>
 </head>
 <body>
-    
+    <ul>
+        <li>Name: <%= movie.name %></li>
+        <li>Year: <%= movie.year %></li>
+        <li>Run Time: <%= movie.runTime %></li>
+        <li>Description: <%= movie.description %></li>
+    </ul>
 </body>
 </html>
