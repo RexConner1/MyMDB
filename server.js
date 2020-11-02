@@ -33,7 +33,9 @@ app.use(express.static("public"));
 // HOMEPAGE
 app.get("/", (req, res) => {
   verifyToken(req, res, () =>
-    res.render("users/index.ejs")
+    res.render("users/index.ejs", {
+        user: req.user
+    })
   );
 });
 

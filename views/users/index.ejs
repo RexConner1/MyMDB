@@ -18,8 +18,12 @@
           <li><a href="#">Video Games</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <% if (user) { %>
+          <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+          <% } else { %>
           <li><a href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <% } %>
         </ul>
       </div>
     </nav>
