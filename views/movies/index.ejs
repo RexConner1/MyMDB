@@ -9,7 +9,7 @@
     <div>
       <ul>
       <% movies.forEach(movie => {%>
-        <li><%= movie.name %></li>
+        <li><a href="/movies/<%= movie.id %>"><%= movie.name %></a></li>
       <% });%>
       </ul>
     </div>
