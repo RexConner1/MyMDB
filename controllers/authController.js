@@ -82,6 +82,8 @@ router.post("/login", (req, res) => {
           return res.sendStatus(400);
         }
       });
+    } else {
+      res.redirect(`/auth/login`);
     }
   });
 });
