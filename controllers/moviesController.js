@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
+const User = require("../models").User;
 const Movie = require("../models").Movie;
 
 router.get("/", (req, res) => {
@@ -19,8 +20,11 @@ router.get("/add", (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    Movie.create(req.body).then((newMovie) => {
-        res.redirect(`/movies/${newMovie.id}`);
+    User.findByPk(req.user.id).then((user) => {
+        Movie.create(req.body).then((newMovie) => {
+            user.addMovie(newMovie);
+            res.redirect(`/movies/${newMovie.id}`);
+        });
     });
 });
 
