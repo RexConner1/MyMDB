@@ -5,9 +5,11 @@ const User = require("../models").User;
 const Movie = require("../models").Movie;
 
 router.get("/", (req, res) => {
-    Movie.findAll().then((movies) => {
+    User.findByPk(req.user.id, {
+        include: [{ model: Movie }],
+    }).then((user) => {
         res.render("movies/index.ejs", {
-            movies: movies,
+            movies: user.Movies,
             user: req.user
         });
     });
