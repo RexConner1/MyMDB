@@ -43,7 +43,7 @@
         <% movies.forEach(movie => { %>
         <tr>
           <th scope="row"><%= movie.id %></th>
-          <td><%= movie.name %></td>
+          <td><%= movie.title %></td>
           <td><%= movie.year %></td>
           <td><%= movie.runTime %></td>
           <td><a href="/movies/<%= movie.id %>">Edit</a></td>
