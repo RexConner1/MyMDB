@@ -7,6 +7,7 @@ const Movie = require("../models").Movie;
 router.get("/", (req, res) => {
     User.findByPk(req.user.id, {
         include: [{ model: Movie }],
+        order: [[Movie, 'name', 'ASC']],
     }).then((user) => {
         res.render("movies/index.ejs", {
             movies: user.Movies,
