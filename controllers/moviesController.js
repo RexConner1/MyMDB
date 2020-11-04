@@ -1,5 +1,8 @@
+require("dotenv").config();
+
 const express = require("express");
 const router = express.Router();
+const axios = require("axios");
 
 const User = require("../models").User;
 const Movie = require("../models").Movie;
@@ -26,9 +29,24 @@ router.post('/add', (req, res) => {
     User.findByPk(req.user.id).then((user) => {
         Movie.create(req.body).then((newMovie) => {
             user.addMovie(newMovie);
+            getTitleFromUPC("097360156744");
             res.redirect(`/movies/${newMovie.id}`);
         });
     });
+
+    function getTitleFromUPC(upcNumber) {
+        return axios({
+            method: `get`,
+            url: 'https://api.upcdatabase.org/product/' + upcNumber,
+            params: {
+                'apikey': process.env.UPC_API_KEY
+            }
+        })
+        .then(response => {
+            console.log(response.data.title);
+        })
+        .catch(error => console.log(error));
+    }
 });
 
 router.get("/:id", (req, res) => {
