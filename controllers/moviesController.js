@@ -37,13 +37,15 @@ router.post('/add', (req, res) => {
     function getTitleFromUPC(upcNumber) {
         return axios({
             method: `get`,
-            url: 'https://api.upcdatabase.org/product/' + upcNumber,
+            
+            url: 'https://api.barcodelookup.com/v2/products',
             params: {
-                'apikey': process.env.UPC_API_KEY
+                'barcode': upcNumber,
+                'key': process.env.UPC_API_KEY
             }
         })
         .then(response => {
-            console.log(response.data.title);
+            console.log(response.data);
         })
         .catch(error => console.log(error));
     }
