@@ -38,6 +38,24 @@ router.get("/:id", (req, res) => {
         user: req.user
       });
     });
-});  
+}); 
+
+router.get("/:id/edit", (req, res) => {
+    Movie.findByPk(req.params.id).then((foundMovie) => {
+      res.render("movies/edit.ejs", {
+        movie: foundMovie,
+        user: req.user
+      });
+    });
+});
+
+router.put("/:id", (req, res) => {
+    Movie.update(req.body, {
+        where: { id: req.params.id },
+        returning: true,
+    }).then((updatedMovie) => {
+        res.redirect('/movies');
+    });
+}); 
 
 module.exports = router;
