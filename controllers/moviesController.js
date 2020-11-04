@@ -56,6 +56,12 @@ router.put("/:id", (req, res) => {
     }).then((updatedMovie) => {
         res.redirect('/movies');
     });
-}); 
+});
+
+router.delete('/:id', (req, res) => {
+    Movie.destroy({ where: { id: req.params.id } }).then(() => {
+        res.redirect("/movies");
+    });
+});
 
 module.exports = router;

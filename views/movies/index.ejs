@@ -46,7 +46,7 @@
           <td><%= movie.title %></td>
           <td><%= movie.year %></td>
           <td><%= movie.runTime %></td>
-          <td><a href="/movies/<%= movie.id %>/edit">Edit</a></td>
+          <td><a href="/movies/<%= movie.id %>/edit">Edit/Delete</a></td>
         </tr>
         <% }); %>
       </tbody>
@@ -55,16 +55,16 @@
 
   <div>
       <form action="">
-        <input type="submit" value="Switch to Have">
+        <input type="submit" value="Switch to Want">
       </form>
 
       <form action="/movies/add">
         <input type="submit" value="Add to Movies">
       </form>
 
-      <form action="">
+      <!-- <form action="">
         <input type="submit" value="Sort">
-      </form>
+      </form> -->
 
       <form action="">
           <input type="submit" value="Search">
