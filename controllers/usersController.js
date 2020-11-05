@@ -27,7 +27,7 @@ router.put('/profile/:id', (req, res) => {
       where: { id: req.params.id },
       returning: true,
   }).then((updatedUser) => {
-      res.redirect(`/users/profile/${req.params.id}`);
+      res.redirect(`/auth/logout`);
   });
 });
 

@@ -30,8 +30,12 @@ router.post("/signup", (req, res) => {
         .then((newUser) => {
           const token = jwt.sign(
             {
+              firstName: newUser.firstName,
+              lastName: newUser.lastName,
               username: newUser.username,
               id: newUser.id,
+              email: newUser.email,
+              password: newUser.password,
             },
             process.env.JWT_SECRET,
             {
@@ -67,8 +71,12 @@ router.post("/login", (req, res) => {
         if (match) {
           const token = jwt.sign(
             {
+              firstName: foundUser.firstName,
+              lastName: foundUser.lastName,
               username: foundUser.username,
               id: foundUser.id,
+              email: foundUser.email,
+              password: foundUser.password,
             },
             process.env.JWT_SECRET,
             {

@@ -10,6 +10,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if (user) { %>
+        <li><a href="/users/profile/<%= user.id %>"><span class="glyphicon glyphicon-user"></span>Profile</a></li>
         <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
         <% } else { %>
         <li><a href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
