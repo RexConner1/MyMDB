@@ -7,26 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">myMDB</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="/movies">Movies</a></li>
-                <li><a href="#">TV Shows</a></li>
-                <li><a href="#">Video Games</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <% if (user) { %>
-                <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-                <% } else { %>
-                <li><a href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <% } %>
-            </ul>
-        </div>
-    </nav>
+    <%- include('../partials/navbar.ejs') %>
 
     <form action="/movies/add" method="POST">
         <div class="input">
