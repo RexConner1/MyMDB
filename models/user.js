@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "userId",
         otherKey: "gameId",
       });
+      User.belongsToMany(models.Show, {
+        through: "UserShow",
+        foreignKey: "userId",
+        otherKey: "showId",
+      });
     }
   };
   User.init({
