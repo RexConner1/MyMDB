@@ -27,9 +27,23 @@ router.get("/add", (req, res) => {
 
 router.post('/add', (req, res) => {
     User.findByPk(req.user.id).then((user) => {
-        Movie.create(req.body).then((newMovie) => {
-            user.addMovie(newMovie);
-            res.redirect(`/movies/${newMovie.id}`);
+        Movie.findOne({
+            where: {
+                title: req.body.title
+            }
+        }).then((existingMovie) => {
+            if (existingMovie !== null) {
+                // existingMovie.dataValues.wantOrHave = req.body.wantOrHave ? true : false;
+                existingMovie.dataValues.userId = req.user.id;
+
+                user.addMovie(existingMovie);
+                res.redirect(`/movies/${existingMovie.id}`);
+            } else {
+                Movie.create(req.body).then((newMovie) => {
+                    user.addMovie(newMovie);
+                    res.redirect(`/movies/${newMovie.id}`);
+                });
+            }
         });
     });
 });

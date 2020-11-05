@@ -26,9 +26,23 @@ router.get("/add", (req, res) => {
 
 router.post('/add', (req, res) => {
     User.findByPk(req.user.id).then((user) => {
-        Game.create(req.body).then((newGame) => {
-            user.addGame(newGame);
-            res.redirect(`/games/${newGame.id}`);
+        Game.findOne({
+            where: {
+                title: req.body.title
+            }
+        }).then((existingGame) => {
+            if (existingGame !== null) {
+                // existingGame.dataValues.wantOrHave = req.body.wantOrHave ? true : false;
+                existingGame.dataValues.userId = req.user.id;
+
+                user.addGame(existingGame);
+                res.redirect(`/games/${existingGame.id}`);
+            } else {
+                Game.create(req.body).then((newGame) => {
+                    user.addGame(newGame);
+                    res.redirect(`/games/${newGame.id}`);
+                });
+            }
         });
     });
 });

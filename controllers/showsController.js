@@ -26,9 +26,23 @@ router.get("/add", (req, res) => {
 
 router.post('/add', (req, res) => {
     User.findByPk(req.user.id).then((user) => {
-        Show.create(req.body).then((newShow) => {
-            user.addShow(newShow);
-            res.redirect(`/shows/${newShow.id}`);
+        Show.findOne({
+            where: {
+                title: req.body.title
+            }
+        }).then((existingShow) => {
+            if (existingShow !== null) {
+                // existingShow.dataValues.wantOrHave = req.body.wantOrHave ? true : false;
+                existingShow.dataValues.userId = req.user.id;
+
+                user.addShow(existingShow);
+                res.redirect(`/shows/${existingShow.id}`);
+            } else {
+                Show.create(req.body).then((newShow) => {
+                    user.addShow(newShow);
+                    res.redirect(`/shows/${newShow.id}`);
+                });
+            }
         });
     });
 });
