@@ -37,6 +37,7 @@
           <th scope="col">Year</th>
           <th scope="col">Run Time</th>
           <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -46,6 +47,7 @@
           <td><%= movie.title %></td>
           <td><%= movie.year %></td>
           <td><%= movie.runTime %></td>
+          <td><a href="/movies/<%= movie.id %>">Details</a></td>
           <td><a href="/movies/<%= movie.id %>/edit">Edit/Delete</a></td>
         </tr>
         <% }); %>
