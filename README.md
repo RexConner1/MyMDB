@@ -34,6 +34,10 @@ A full CRUD app designed to hold user info on movies, video games, and TV shows
     - If time, sort by other attributes, such as year, run time, etc.
 - I want to be able to add existing movies other users have to my database
 - On that same note, I want to keep my entries separate from others
+- I want the ability to freely edit and update my profile
+- I want easy navigation
+    - Follow the principles of MVP
+    - ex. buttons to return to previous screens/forms
 - I want to the style to be simplistic for easy loading
 
 ## Technologies Used
