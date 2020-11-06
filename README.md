@@ -1,4 +1,4 @@
-# Project 1: Tower of Hanoi
+# Project 2: myMDB (My Movie DataBase)
 
 ## Objective
 This project involves creating a full-stack application that:
