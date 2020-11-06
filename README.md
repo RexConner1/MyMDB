@@ -37,12 +37,12 @@ A full CRUD app designed to hold user info on movies, video games, and TV shows
 - I want to the style to be simplistic for easy loading
 
 ## Technologies Used
-Javascript ES6, HTML5
-DOM Manipulation
-REST, CRUD
-Sequelize Associations
-Cloud-based Hosting (Heroku)
-Bootstrap
+Javascript ES6, HTML5  
+DOM Manipulation  
+REST, CRUD  
+Sequelize Associations  
+Cloud-based Hosting (Heroku)  
+Bootstrap  
 EJS Partials
 
 ## The Plan
