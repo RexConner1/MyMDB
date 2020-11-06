@@ -5,10 +5,12 @@
     <title><%= movie.title %></title>
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>  
+    <%- include('../partials/navbar.ejs') %> 
+    
+    <h1><%= movie.title %></h1>
 
     <ul>
-        <li>Title: <%= movie.title %></li>
+        <!-- <li>Title: <%= movie.title %></li> -->
         <li>Year: <%= movie.year %></li>
         <li>Run Time: <%= movie.runTime %></li>
         <li>Description: <%= movie.description %></li>

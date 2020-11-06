@@ -5,10 +5,12 @@
     <title><%= show.title %></title>
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>  
+    <%- include('../partials/navbar.ejs') %> 
+
+    <h1><%= show.title %></h1>
 
     <ul>
-        <li>Title: <%= show.title %></li>
+        <!-- <li>Title: <%= show.title %></li> -->
         <li>First Air Date: <%= show.firstAirDate %></li>
         <li>Seasons: <%= show.seasons %></li>
         <li>Episodes: <%= show.episodes %></li>

@@ -5,10 +5,12 @@
     <title><%= game.title %></title>
 </head>
 <body>
-    <%- include('../partials/navbar.ejs') %>  
+    <%- include('../partials/navbar.ejs') %> 
+
+    <h1><%= game.title %></h1>
 
     <ul>
-        <li>Title: <%= game.title %></li>
+        <!-- <li>Title: <%= game.title %></li> -->
         <li>Release Date: <%= game.releaseDate %></li>
         <li>Console: <%= game.console %></li>
         <li>Description: <%= game.description %></li>
