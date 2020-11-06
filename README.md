@@ -17,7 +17,7 @@ A full CRUD app designed to hold user info on movies, video games, and TV shows
 ## Main Features
 - Able to create, edit, and delete users
 - Able to create, edit, and delete medias for EACH user
-    -i.e each user has their own environment
+    - i.e. each user has their own environment
 - Sorts media by title
 
 ## User Stories
