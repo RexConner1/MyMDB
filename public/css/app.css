@@ -1,0 +1,14 @@
+form {
+    text-align: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+}
+
+ul {
+    list-style-position: inside;
+}
