@@ -47,7 +47,7 @@ EJS Partials
 
 ## The Plan
 - Wireframe:
-![](images/wireframe.jpg)
+![](public/images/wireframe.jpg)
 
 ## The Approach
 - Even though this project involves multiple media, a large portion of the time was spent on the Movie model/controller
